@@ -1,7 +1,7 @@
 # NFT Random Generator
  
 ## Description
-Combines multiple layer randomly into a single image, pins to IPFS, and creates metadata json. Simply place your layers in the different layer folders in the proper layer ordering and run `nft_generator.py` script. The script with then scan all the layers and creates jsons with all the required data for use later. After scanning the script will then create a random string of chars and file names in the `dna.txt` this it to regenerate the same nfts later if need but will also be used to create the inital images. Once `dna.txt` is created the script with read that file and the layer jsons and merge a all the layer in the order they are given. The motivation for creating this was that prior script/programs where not flexable nor easy to manipulate as desired.
+Combines multiple layer randomly into a single image, pins to IPFS, and creates metadata json. Simply place your layers in the different layer folders in the proper layer ordering and run `nft_generator.py` script. The script with then scan all the layers and creates jsons with all the required data for use later. After scanning the script will then create a random string of chars and file names in the `dna.txt` this it to regenerate the same nfts later if need but will also be used to create the inital images. Once `dna.txt` is created the script with read that file and the layer jsons and merge a all the layer in the order they are given.
 
 ## Usage
 Place your layers in the corresponding folders, on line `134 generate_nft_dna(10)` change the 10 to any number n greater than 0 to generate n nfts and metadata jsons.
