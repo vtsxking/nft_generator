@@ -7,7 +7,7 @@ from PIL import Image
 import ipfs
 
 def generate_json(dir_name, foldername):
-    json_file = open("../jsons/"+foldername+".json", "a")
+    json_file = open("../jsons/"+foldername+".json", "w")
     json_file.write("{")
     for file in os.listdir(dir_name):
         if (file != os.listdir(dir_name)[-1]):
@@ -38,7 +38,7 @@ def generate_nft_dna(count):
             arr.append(key)
         layers_arr.append(arr)
 
-    file = open("../nft_dna/dna.txt", "a")
+    file = open("../nft_dna/dna.txt", "w")
 
     for i in range(count):
         dna_str = ""
