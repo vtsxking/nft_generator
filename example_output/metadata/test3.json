@@ -1,0 +1,11 @@
+{
+  "721": {
+    "adaw51daw3d1aw3d1aw3d1aw35d1aw5d1a35d1a3w51d": {
+      "test": {
+        "name": "test3",
+        "image": "ipfs://{$CID}",
+        "Traits": ["background_1", "base_1", "eyes_3"]
+      }
+    }
+  }
+}

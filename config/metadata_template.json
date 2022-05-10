@@ -1,0 +1,11 @@
+{
+  "721": {
+    "{$policy}": {
+      "{$token}": {
+        "name": "{$name}",
+        "image": "ipfs://{$CID}",
+        "Traits": ["$layer0", "$layer1", "$layer2"]
+      }
+    }
+  }
+}
