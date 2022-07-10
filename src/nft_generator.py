@@ -26,6 +26,7 @@ def generate_all_jsons():
 
 def generate_nft_dna(count):
     layers_arr = []
+    layers_components = []
 
     dir = "../jsons"
     for jsonfile in os.listdir(dir):
@@ -37,6 +38,7 @@ def generate_nft_dna(count):
         for key in json_object:
             arr.append(key)
         layers_arr.append(arr)
+        layers_components.append(json_object)
 
     file = open("../nft_dna/dna.txt", "w")
 
@@ -48,7 +50,16 @@ def generate_nft_dna(count):
                     dna_str += ('-'+str(i)+'-')
                 else:
                     dna_str += (str(i)+'-')
-                dna_str += random.choice(layers_arr[i])
+                print(layers_arr[i])
+                dna = random.choice(layers_arr[i])
+                chance = random.randint(1,100)
+                while int(layers_components[i][dna]['prob']) < chance:
+                    print("probability failed")
+                    print("item: {0}".format(dna))
+                    print("chance: {0}".format(chance))
+                    dna = random.choice(layers_arr[i])
+                    chance = random.randint(1,100)
+                dna_str += dna
     
         if (i == count-1):
             file.write(dna_str)
@@ -59,7 +70,6 @@ def generate_nft_dna(count):
 def build_nfts(dna_path, policy_id, project_name):
     
     layers_arr = []
-    components = []
     dir = "../jsons"
     for jsonfile in os.listdir(dir):
         file = open(os.path.join(dir, jsonfile), "r")
@@ -78,6 +88,7 @@ def build_nfts(dna_path, policy_id, project_name):
 
     count = 1
     for dna in dna_arr:
+        components = []
         print(dna)
         if (dna != ""):
             dna_components = dna.split("-")
